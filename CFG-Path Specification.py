@@ -4722,6 +4722,7 @@ def RealiCFG(flpath,file1):
                             Nodeinfo1.append(nodeval)
                        
     return Nodeinfo1, modulelist2
+
 def nodelist(node, nodeavail):
     
     if type(node) is list:
@@ -4736,7 +4737,7 @@ def nodelist(node, nodeavail):
 
 predecessors3 = []
 nodetoreach = []
-flpath2 = 'RTL/Compare/'
+
 flpath1 = 'RTL/All_RTL/'
 with open(flpath1 + "RTLFiles.txt") as fl:
         
@@ -4759,7 +4760,7 @@ inputkeys = []
 inputvals = []
 firstnode = input("Choose which node to reach: " )
 conditioncheck = input("Variable to check: ")
-with open('C://rtlContest/RTL-CFG/inputnode.txt', 'w') as f:
+with open('C://rtlContest/RTL-CFG/input_node.txt', 'w') as f:
     for i in Nodeflowx:
         if conditioncheck.split()[0] in i and firstnode in i:
             i.split()
@@ -4768,7 +4769,7 @@ with open('C://rtlContest/RTL-CFG/inputnode.txt', 'w') as f:
 path, inputvals, inputkeys = EdgeRealignment(firstnode, Nodeflowx, 1, [])
 
 print(path)
-with open('C://rtlContest/RTL-CFG/inputvals.txt', 'w') as f:
+with open('C://rtlContest/RTL-CFG/input_value.txt', 'w') as f:
     for i,value in enumerate(inputkeys):
         for j,val in enumerate(inputvals):
             if i==j:
